@@ -1,9 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-import 'Pages/Home_Page.dart';
-import 'Pages/Search_Page.dart';
-import 'Pages/Categories_Page.dart';
+
 import 'Pages/navigation.dart';
 
 void main()  {

@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gpgp/widgets/image_constant.dart';
 import 'Setting_Page.dart';
 
-import 'Categories_Page.dart';
 
 class SearchPage extends StatefulWidget {
   final String searchQuery;

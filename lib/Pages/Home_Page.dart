@@ -1,7 +1,9 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_svg/svg.dart';
 import 'package:gpgp/widgets/image_constant.dart';
-import 'Categories_Page.dart';
+//import 'Categories_Page.dart';
 
 import 'Search_Page.dart';
 
@@ -12,28 +14,26 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-
 class _HomePageState extends State<HomePage> {
   final double cardBorderRadius = 25.0;
 
+  //int _selectedIndex = 0;
 
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  // void _onItemTapped(int index) {
+  //   setState(() {
+  //     _selectedIndex = index;
+  //   });
+  // }
   TextEditingController searchController = TextEditingController();
 
-  void _navigateToSearchPage() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => SearchPage(searchQuery: searchController.text),
-      ),
-    );
-  }
+  // void _navigateToSearchPage() {
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(
+  //       builder: (context) => SearchPage(searchQuery: searchController.text),
+  //     ),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -89,8 +89,7 @@ class _HomePageState extends State<HomePage> {
                           width: 24,
                           height: 24,
                         ),
-                        onPressed: () {
-                        },
+                        onPressed: () {},
                       ),
                     ),
                   ),
@@ -104,7 +103,7 @@ class _HomePageState extends State<HomePage> {
 
                 decoration: InputDecoration(
                   hintText: "Search a product or a pharmacy",
-                  hintStyle: TextStyle(color: Colors.black45),
+                  hintStyle: const TextStyle(color: Colors.black45),
                   filled: true,
                   fillColor: const Color.fromARGB(255, 222, 224, 232),
                   border: OutlineInputBorder(
@@ -131,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.only(top: 20),
                 decoration: BoxDecoration(
                   color: Colors.white54.withOpacity(0.5),
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(70.0),
                     topRight: Radius.circular(70.0),
                   ),
@@ -143,21 +142,29 @@ class _HomePageState extends State<HomePage> {
                       child: PageView(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
                             child: Stack(
                               alignment: Alignment.bottomCenter,
                               children: [
                                 ClipRRect(
-                                  borderRadius: BorderRadius.circular(cardBorderRadius),
-                                  child: Image.asset(ImageConstant.imgRectangle4, fit: BoxFit.cover),
+                                  borderRadius:
+                                      BorderRadius.circular(cardBorderRadius),
+                                  child: Image.asset(
+                                      ImageConstant.imgRectangle4,
+                                      fit: BoxFit.cover),
                                 ),
                                 Container(
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(cardBorderRadius),
+                                    borderRadius:
+                                        BorderRadius.circular(cardBorderRadius),
                                     gradient: LinearGradient(
                                       begin: Alignment.bottomCenter,
                                       end: Alignment.topCenter,
-                                      colors: [Colors.black.withAlpha(100), Colors.transparent],
+                                      colors: [
+                                        Colors.black.withAlpha(100),
+                                        Colors.transparent
+                                      ],
                                     ),
                                   ),
                                   padding: const EdgeInsets.all(16.0),
@@ -174,25 +181,33 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
                             child: Stack(
                               alignment: Alignment.bottomCenter,
                               children: [
                                 ClipRRect(
-                                  borderRadius: BorderRadius.circular(cardBorderRadius),
-                                  child: Image.asset(ImageConstant.imgRectangle4149x329, fit: BoxFit.cover),
+                                  borderRadius:
+                                      BorderRadius.circular(cardBorderRadius),
+                                  child: Image.asset(
+                                      ImageConstant.imgRectangle4149x329,
+                                      fit: BoxFit.cover),
                                 ),
                                 Container(
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(cardBorderRadius),
+                                    borderRadius:
+                                        BorderRadius.circular(cardBorderRadius),
                                     gradient: LinearGradient(
                                       begin: Alignment.bottomCenter,
                                       end: Alignment.topCenter,
-                                      colors: [Colors.black.withAlpha(100), Colors.transparent],
+                                      colors: [
+                                        Colors.black.withAlpha(100),
+                                        Colors.transparent
+                                      ],
                                     ),
                                   ),
                                   padding: const EdgeInsets.all(16.0),
-                                  child: Text(
+                                  child: const Text(
                                     'Panadol',
                                     style: TextStyle(
                                       fontSize: 24,
@@ -204,13 +219,13 @@ class _HomePageState extends State<HomePage> {
                               ],
                             ),
                           ),
-
                         ],
                       ),
                     ),
                     const SizedBox(height: 10),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20.0, vertical: 10.0),
                       child: Row(
                         children: [
                           Icon(
@@ -229,10 +244,8 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-
                     Container(
                       height: 120,
-
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: 10,
@@ -243,49 +256,57 @@ class _HomePageState extends State<HomePage> {
                             },
                             child: Container(
                               width: MediaQuery.of(context).size.width * 0.93,
-                              margin: EdgeInsets.only(left: 16, right: index == 9 ? 16 : 0),
+                              margin: EdgeInsets.only(
+                                  left: 16, right: index == 9 ? 16 : 0),
                               decoration: BoxDecoration(
                                 color: Colors.white.withOpacity(0.6),
-                                borderRadius: BorderRadius.circular(cardBorderRadius),
+                                borderRadius:
+                                    BorderRadius.circular(cardBorderRadius),
                                 boxShadow: [
                                   BoxShadow(
                                     color: Colors.black.withOpacity(0.1),
                                     blurRadius: 6,
-                                    offset: Offset(0, 3),
+                                    offset: const Offset(0, 3),
                                   ),
                                 ],
                               ),
                               child: Row(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(10), // Space around the icon
+                                    padding: const EdgeInsets.all(
+                                        10), // Space around the icon
                                     child: Container(
                                       width: 50,
                                       height: 50,
                                       decoration: BoxDecoration(
-                                        color: Colors.cyan[100], // Icon background color
+                                        color: Colors
+                                            .cyan[100], // Icon background color
                                         borderRadius: BorderRadius.circular(10),
                                       ),
-                                      child: Icon(
+                                      child: const Icon(
                                         Icons.local_pharmacy,
                                         color: Color(0xFF4CA6C2), // Icon color
                                         size: 30, // Icon size
                                       ),
                                     ),
                                   ),
-                                  Expanded(
+                                  const Expanded(
                                     child: Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 16.0),
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 16.0),
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Text(
                                             'Pharmacy One',
                                             style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 18,
-                                              color: Color(0xFF71CDD7), // Text color
+                                              color: Color(
+                                                  0xFF71CDD7), // Text color
                                             ),
                                           ),
                                           Text(
@@ -304,7 +325,6 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                     ),
                                   ),
-
                                 ],
                               ),
                             ),
@@ -313,9 +333,9 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     const SizedBox(height: 10),
-
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20.0, vertical: 10.0),
                       child: Row(
                         children: [
                           SvgPicture.asset(
@@ -348,42 +368,49 @@ class _HomePageState extends State<HomePage> {
                             },
                             child: Container(
                               width: MediaQuery.of(context).size.width * 0.93,
-                              margin: EdgeInsets.only(left: 16, right: index == 9 ? 16 : 0),
+                              margin: EdgeInsets.only(
+                                  left: 16, right: index == 9 ? 16 : 0),
                               decoration: BoxDecoration(
                                 color: Colors.white.withOpacity(0.6),
-                                borderRadius: BorderRadius.circular(cardBorderRadius),
+                                borderRadius:
+                                    BorderRadius.circular(cardBorderRadius),
                                 boxShadow: [
                                   BoxShadow(
                                     color: Colors.black.withOpacity(0.1),
                                     blurRadius: 6,
-                                    offset: Offset(0, 3),
+                                    offset: const Offset(0, 3),
                                   ),
                                 ],
                               ),
                               child: Row(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(10), // Space around the icon
+                                    padding: const EdgeInsets.all(
+                                        10), // Space around the icon
                                     child: Container(
                                       width: 50,
                                       height: 50,
                                       decoration: BoxDecoration(
-                                        color: Colors.cyan[100], // Icon background color
+                                        color: Colors
+                                            .cyan[100], // Icon background color
                                         borderRadius: BorderRadius.circular(10),
                                       ),
-                                      child: Icon(
+                                      child: const Icon(
                                         Icons.local_pharmacy,
                                         color: Color(0xFF4CA6C2),
                                         size: 30, // Icon size
                                       ),
                                     ),
                                   ),
-                                  Expanded(
+                                  const Expanded(
                                     child: Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 16.0),
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 16.0),
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Text(
                                             'Pharmacy One',
@@ -409,7 +436,6 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                     ),
                                   ),
-
                                 ],
                               ),
                             ),
@@ -417,7 +443,6 @@ class _HomePageState extends State<HomePage> {
                         },
                       ),
                     ),
-
                   ],
                 ),
               ),
@@ -425,7 +450,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-
     );
   }
 }

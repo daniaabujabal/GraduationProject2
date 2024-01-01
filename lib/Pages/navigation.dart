@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Home_Page.dart';
 import 'Categories_Page.dart';
-import 'Search_Page.dart';
 import 'Setting_Page.dart';
 class  MainNavigationPage extends StatefulWidget {
   const MainNavigationPage({super.key});
